@@ -1,0 +1,44 @@
+.parent {
+	display: table;
+	/*display table, aby móc w dziecku table-cell użyć vertical-align: middle - wyśrodkowywanie w pionie*/
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	/*sprawia, ze powiekszony obraz nie wyjezdza ponad rozmiar divu*/
+	border: 1px solid black;
+}
+
+.child {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	/*dopasowywuje rozmiar div do rozmiaru rodzica*/
+	background-image: url('tosia.jpg');
+	background-position: center; 
+	/*wyśrodkowywuje obraz*/
+	background-size: cover;
+	/*zmniejsza obraz do rozmiaru div*/
+	transition: all .5s;
+	/*spowalnia efekt hover*/
+	text-align: center;
+	vertical-align: middle;
+}
+
+.parent:hover .child,
+.parent:focus .child {
+	transform: scale(1.2);
+	/*zwiększa rozmiar divu po najechaniu myszka*/
+	cursor: pointer;
+}
+
+.parent:hover .link,
+.paremt:focus .link {
+	display: block;
+}
+
+.link {
+	display: none;
+	font-size: 35px;
+	text-decoration: none;
+	color: white;
+}
